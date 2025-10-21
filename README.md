@@ -2,6 +2,8 @@
 
 HIGH LEVEL ARCHITECTURE:
 
+<img width="801" height="412" alt="highlevel_diagram" src="https://github.com/user-attachments/assets/37b71a40-266f-4ae5-98ac-832a22b8a77d" />
+
 
 API ARCHITECTURE:
 
