@@ -7,7 +7,6 @@ from os import getenv
 import consumers
 
 REDIS_HOST = getenv("REDIS_HOST")
-REDIS_PORT = getenv("REDIS_PORT")
 
 app = FastAPI()
 
@@ -20,8 +19,6 @@ app.add_middleware(
 
 redis = get_redis_connection(
     host=REDIS_HOST,
-    port=REDIS_PORT,
-    decode_responses=True
 )
 
 
