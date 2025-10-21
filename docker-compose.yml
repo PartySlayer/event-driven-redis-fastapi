@@ -30,4 +30,14 @@ services:
     command: ["redis-server"]
     #volumes:
 
+  frontend:
+    build: ./frontend  
+    networks:
+      - app-network
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+
 #volumes:
