@@ -1,16 +1,25 @@
+networks:
+  app-network:
+    driver: bridge
+
 services:
 
   backend:
     build: ./backend
+    networks:
+      - app-network
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=redis://cache
+      - REDIS_HOST=cache
+      - REDIS_PORT=6379
     depends_on:
       - cache
 
   cache:
     image: redis:latest
+    networks:
+      - app-network
     ports:
       - "6379:6379"
     healthcheck:

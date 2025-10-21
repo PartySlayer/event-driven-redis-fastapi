@@ -6,7 +6,8 @@ from redis_om import get_redis_connection, HashModel
 from os import getenv
 import consumers
 
-DATABASE = getenv("DATABASE_URL")
+REDIS_HOST = getenv("REDIS_HOST")
+REDIS_PORT = getenv("REDIS_PORT")
 
 app = FastAPI()
 
@@ -18,7 +19,8 @@ app.add_middleware(
 )
 
 redis = get_redis_connection(   # FIX - non trova il service name
-    host=DATABASE,
+    host=REDIS_HOST,
+    port=REDIS_PORT,
     decode_responses=True
 )
 
