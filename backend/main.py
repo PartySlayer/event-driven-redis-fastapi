@@ -13,12 +13,12 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['http://localhost:3000'],  # porta default react
+    allow_origins=['http://localhost:3000'],  # default port react
     allow_methods=['*'],
     allow_headers=['*']
 )
 
-redis = get_redis_connection(   # FIX - non trova il service name
+redis = get_redis_connection(
     host=REDIS_HOST,
     port=REDIS_PORT,
     decode_responses=True

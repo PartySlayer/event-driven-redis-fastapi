@@ -60,9 +60,9 @@ def increase_budget(state, event):
 
 
 CONSUMERS = {
-    "CREATE_DELIVERY": create_delivery,
-    "START_DELIVERY": start_delivery,
-    "PICKUP_PRODUCTS": pickup_products,
-    "DELIVER_PRODUCTS": deliver_products,
-    "INCREASE_BUDGET": increase_budget,
+    "CREATE_DELIVERY": create_delivery,     # data budget e notes
+    "START_DELIVERY": start_delivery,       # no data, delivery id
+    "PICKUP_PRODUCTS": pickup_products,     # delivery id and data purch price, quantity
+    "DELIVER_PRODUCTS": deliver_products,   # delivery id and data sell price, quantity
+    "INCREASE_BUDGET": increase_budget,     # everytime budget is set, add it to state
 }
